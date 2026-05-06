@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+<title>CALCULADORA WEB</title>
+</head>
+<body>
+    <div class="container" >
+    <h1>CALCULADORA WEB</h1>
+    <br>
+    <input id="valor1" class="form-control" type="number">
+        <br>
+        <input id="valor2" class="form-control">
+       <br>
+        <hr>
+    
+    <table class="table table-striped table-hover alingn-middle">
+        <tr>
+            <div class="">
+                <td><button type="button" class="btn btn-primary" onclick="myFunctionSuma()">+</button> </td>
+                <td><button type="button" class="btn btn-primary" onclick="myFunctionMinimo()">Min</button> </td>
+                <td><button type="button" class="btn btn-primary" onclick="myFunctionMaximo()">Max</button> </td>
+                <td><button type="button" class="btn btn-primary" onclick="myFunctionPotencia()">^</button> </td> 
+            </div>
+        </tr>
+ 
+        <tr>
+            <div>
+                <td><button type="button" class="btn btn-success" onclick="myFunctionResta()">-</button> </td>
+                <td><button type="button" class="btn btn-success" onclick="myFunctionRaiz()">√x</button> </td>
+                <td><button type="button" class="btn btn-success" onclick="myFunctionPorc()">%</button> </td>
+                <td><button type="button" class="btn btn-success" onclick="myFunctionValorAbs()">|x|</button> </td>       
+            </div>
+        </tr>
+
+        <tr>
+            <div>
+                <td><button type="button" class="btn btn-danger" onclick="myFunctionMultiplicación()">X</button> </td>
+                <td><button type="button" class="btn btn-danger" onclick="myFunctionSeno()">Sen</button></td>
+                <td><button type="button" class="btn btn-danger" onclick="myFunctionBin()">Bin</button></td>
+                <td><button type="button" class="btn btn-danger" onclick="myFunctionExp()">e^</button></td>
+            </div>
+        </tr>
+
+        <tr>
+            <div>
+                <td><button type="button" class="btn btn-info" onclick="myFunctionDivisión()">/</button> </td>
+                <td><button type="button" class="btn btn-info" onclick="myFunctionCoseno()">Cos</button></td>
+                <td><button type="button" class="btn btn-info" onclick="myFunctionRaizCubica()">∛</button> </td> 
+                <td><button type="button" class="btn btn-info" onclick="myFunctionBorrar()">C</button></td>
+            </div>
+            
+        </tr>
+    </table>
+
+        <br>
+        <p id="resultado">...</p>
+        <br>
+        <script>
+            function myFunctionSuma(){
+                var x, y, suma, text;
+                x = document.getElementById("valor1").value;
+                y = document.getElementById("valor2").value;
+
+                if(isNaN(x) || isNaN(y)){
+                    text="ES IMPORTANTE INTRODUCIR VALORES NUMERICOS";
+                }else{
+                    suma = parseFloat(x)+parseFloat(y);
+                    text=suma;
+                }
+                document.getElementById("resultado").innerHTML=text;
+            }
+            function myFunctionResta(){
+                var x, y, resta, text;
+                x = document.getElementById("valor1").value;
+                y = document.getElementById("valor2").value;
+
+                if(isNaN(x) || isNaN(y)){
+                    text = "INTRODUCE NUMEROS";
+                }else{
+                    resta = parseFloat(x)-parseFloat(y);
+                    text=resta;
+                }
+                document.getElementById("resultado").innerHTML=text;
+            }
+             function myFunctionMultiplicación(){
+                var x, y, multiplicación, text;
+                x = document.getElementById("valor1").value;
+                y = document.getElementById("valor2").value;
+
+                if(isNaN(x) || isNaN(y)){
+                    text = "INTRODUCE NUMEROS";
+                }else{
+                    multiplicación = parseFloat(x)*parseFloat(y);
+                    text=multiplicación;
+                }
+                document.getElementById("resultado").innerHTML=text;
+            }
+             function myFunctionDivisión(){
+                var x, y, división, text;
+                x = document.getElementById("valor1").value;
+                y = document.getElementById("valor2").value;
+
+                if(isNaN(x) || isNaN(y)){
+                    text = "INTRODUCE NUMEROS";
+                }else{
+                    división = parseFloat(x)/parseFloat(y);
+                    text=división;
+                }
+                document.getElementById("resultado").innerHTML=text;
+            }
+            function myFunctionBorrar(){
+                text ="";
+
+                document.getElementById("valor1").value="";
+                document.getElementById("valor2").value="";
+                document.getElementById("resultado").innerHTML=text;
+            }
+
+            function myFunctionRaiz(){
+   var x, raiz, text,
+   x=document.getElementById("valor1").value;
+   if(isNaN(x)){
+         text="introducir numeros"
+   }
+   else{
+      raiz=Math.sqrt(x);
+      text=raiz;
+   }
+   document.getElementById("resultado").innerHTML=text;
+}
+function myFunctionRaizCubica(){
+   var x, RaizCubica, text,
+   x=document.getElementById("valor1").value;
+   if(isNaN(x)){
+         text="introducir numeros"
+   }
+   else{
+      raiz=Math.abs(x);
+      text=RaizCubica;
+   }
+   document.getElementById("resultado").innerHTML=text;
+}
+function myFunctionSeno(){
+   var x, Seno, text,
+   x=document.getElementById("valor1").value;
+   if(isNaN(x)){
+         text="introducir numeros"
+   }
+   else{
+      seno=Math.abs(x);
+      text=Seno;
+   }
+   document.getElementById("resultado").innerHTML=text;
+}
+function myFunctionCoseno(){
+   var x, Coseno, text,
+   x=document.getElementById("valor1").value;
+   if(isNaN(x)){
+         text="introducir numeros"
+   }
+   else{
+      coseno=Math.abs(x);
+      text=coseno;
+   }
+   document.getElementById("resultado").innerHTML=text;
+}
+function myFunctionMaximo(){
+   var x, Maximo, text,
+   x=document.getElementById("valor1").value;
+   if(isNaN(x)){
+         text="introducir numeros"
+   }
+   else{
+      maximo=Math.abs(x);
+      text=maximo;
+   }
+   document.getElementById("resultado").innerHTML=text;
+}
+function myFunctionMinimo(){
+   var x, Minimo, text,
+   x=document.getElementById("valor1").value;
+   if(isNaN(x)){
+         text="introducir numeros"
+   }
+   else{
+      minimo=Math.abs(x);
+      text=minimo;
+   }
+   document.getElementById("resultado").innerHTML=text;
+}
+function myFunctionPotencia(){
+   var x, Potencia, text,
+   x=document.getElementById("valor1").value;
+   if(isNaN(x)){
+         text="introducir numeros"
+   }
+   else{
+      potencia=Math.abs(x);
+      text=potencia;
+   }
+   document.getElementById("resultado").innerHTML=text;
+}
+function myFunctionPorcentaje(){
+   var x, Porcentaje, text,
+   x=document.getElementById("valor1").value;
+   if(isNaN(x)){
+         text="introducir numeros"
+   }
+   else{
+      porcentaje=Math.abs(x);
+      text=porcentaje;
+   }
+   document.getElementById("resultado").innerHTML=text;
+}
+function myFunctionValorAbsoluto(){
+   var x, ValorAbsoluto, text,
+   x=document.getElementById("valor1").value;
+   if(isNaN(x)){
+         text="introducir numeros"
+   }
+   else{
+      valorabsoluto=Math.abs(x);
+      text=valorabsoluto;
+   }
+   document.getElementById("resultado").innerHTML=text;
+}
+function myFunctionBin(){
+   var x, Bin, text,
+   x=document.getElementById("valor1").value;
+   if(isNaN(x)){
+         text="introducir numeros"
+   }
+   else{
+      Bin=Math.abs(x);
+      text=Bin;
+   }
+   document.getElementById("resultado").innerHTML=text;
+}
+function myFunctionExponente(){
+   var x, Exponente, text,
+   x=document.getElementById("valor1").value;
+   if(isNaN(x)){
+         text="introducir numeros"
+   }
+   else{
+      Exponente=Math.abs(x);
+      text=Exponente;
+   }
+   document.getElementById("resultado").innerHTML=text;
+}
+        </script>
+        </div>
+</body>
+</html>
